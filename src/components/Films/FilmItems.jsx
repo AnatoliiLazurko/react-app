@@ -7,7 +7,7 @@ const FilmItems = ({ data }) => {
         <div>
             <div className='row'>
                 {data.map((item) => (
-                    <FilmInfo item={item} />
+                    <FilmInfo item={item} key={item.id} />
                 ))}
             </div>
         </div>

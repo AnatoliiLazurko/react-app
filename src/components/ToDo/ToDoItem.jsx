@@ -1,17 +1,17 @@
 import React from 'react';
+import classNames from 'classnames';
 
-const ToDoItem = ({name, completed}) => {
+const ToDoItem = ({task, toggleTaskCompleted, deleteTask}) => {
     return (
         <li>
-            <input type="checkbox" defaultChecked={completed} />
-            {name}
+            <input type="checkbox" defaultChecked={task.completed} onChange={() => {toggleTaskCompleted(task.id)}}/>
+            <span className={classNames({complete: task.completed})}>{task.name}</span>
             <div>
                 <button>Edit</button>
-                <button>Delete</button>
+                <button onClick={() => {deleteTask(task.id)}}>Delete</button>
             </div>
         </li>
     );
 }
 
 export default ToDoItem;
-

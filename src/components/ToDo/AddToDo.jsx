@@ -1,15 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-const AddToDo = () => {
+const AddToDo = ({ addTask }) => {
+    
+    const [name, setName] = useState('');
 
     const submitHandler = (e) => {
         e.preventDefault();
+        if (name.trim().length) {
+            addTask(name);
+            setName('');
+        }
     };
+
+    const handleChange = (e) => {
+        setName(e.target.value);
+    }
 
     return (
         <div>
             <form onSubmit={submitHandler}>
-                <input type="text" />
+                <input type="text" value={name} onChange={handleChange}/>
                 <button>Add</button>
             </form>
         </div>
