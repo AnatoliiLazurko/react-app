@@ -1,16 +1,15 @@
 import React from 'react';
+import FilterButton from './FilterButton';
 
-const FilterToDo = () => {
-    const hello = (event) => {
-        // alert("Hello");
-        console.log(event.target)
-    }
+const FilterToDo = ({filter_map, filter, setFilter}) => {
+    
+    const filter_names = Object.keys(filter_map);
 
     return (
         <div>
-            <button onClick={() => {alert("Hello") }}>Show All</button>
-            <button onClick={hello}>Show active</button>
-            <button onClick={hello}>Show completed</button>
+            {filter_names.map((name) => (
+                <FilterButton text={name} setFilter={setFilter} key={name} />
+            ))}
         </div>
     );
 }
