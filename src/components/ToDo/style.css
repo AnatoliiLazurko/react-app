@@ -6,3 +6,18 @@
     text-decoration: line-through;
     color: red;
 }
+
+.filter-buttons {
+    margin-top: 10px;
+}
+
+.filter-buttons button {
+    font-weight: 600;
+    border: 2px solid #24262b;
+    margin-right: 5px;
+}
+
+.active-filter {
+    background-color: #24262b;
+    color: white;
+}

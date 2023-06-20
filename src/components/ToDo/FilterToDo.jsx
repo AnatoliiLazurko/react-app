@@ -6,9 +6,9 @@ const FilterToDo = ({filter_map, filter, setFilter}) => {
     const filter_names = Object.keys(filter_map);
 
     return (
-        <div>
+        <div className='filter-buttons'>
             {filter_names.map((name) => (
-                <FilterButton text={name} setFilter={setFilter} key={name} />
+                <FilterButton text={name} filter={filter} setFilter={setFilter} key={name} />
             ))}
         </div>
     );
