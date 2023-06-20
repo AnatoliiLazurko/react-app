@@ -17,7 +17,7 @@ const AddToDo = ({ addTask }) => {
     }
 
     return (
-        <div>
+        <div className='form-addTask'>
             <form onSubmit={submitHandler}>
                 <input type="text" value={name} onChange={handleChange}/>
                 <button>Add</button>

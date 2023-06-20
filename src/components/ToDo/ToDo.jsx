@@ -47,8 +47,8 @@ const ToDo = () => {
         Completed: (task) => task.completed,
     };
 
-    const tasksWord = taskList.length === 1 ? 'task' : 'tasks';
-    const taskHeading = `${taskList.length} ${tasksWord}`
+    const tasksWord = taskList.filter(filter_map[filter]).length === 1 ? 'task' : 'tasks';
+    const taskHeading = `${taskList.filter(filter_map[filter]).length} ${tasksWord}`
 
     return (
         <div className='container'>
@@ -58,7 +58,7 @@ const ToDo = () => {
             <FilterToDo filter_map={filter_map} filter={filter} setFilter={setFilter} />
 
             <div>
-                <h3>{taskHeading} remaining</h3>
+                <h3>{taskHeading}</h3>
                 <ul>
                     {taskList.filter(filter_map[filter]).map((task) => (
                         <ToDoItem
