@@ -1,21 +1,14 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import { NavLink, Outlet, useSearchParams } from 'react-router-dom';
 import './users.css';
 import axios from 'axios';
+import UsersContext from '../../contexts/UsersContext';
 
 const Users = () => {
-    const [users, setUsers] = useState([]);
+    const users = useContext(UsersContext);
+    
     const [search, setSearch] = useSearchParams();
     const [textSearch, setTextSearch] = useState(search.get('q') ?? '');
-
-    const getUsers = async () => {
-        const response = await axios.get("https://jsonplaceholder.typicode.com/users");
-        setUsers(response.data);
-    }
-
-    useEffect(() => {
-        getUsers();
-    }, []);
 
     const searchHendler = (e) => {
         setTextSearch(e.target.value);

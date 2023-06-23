@@ -23,3 +23,20 @@ header a.active {
     color: orangered;
     opacity: 1;
 }
+
+header.dark {
+    background-color: #333;
+    color: white;
+}
+
+header.dark a{
+    color: white;
+}
+
+header.light {
+    background-color: white;
+}
+
+header.light a {
+    color: black;
+}

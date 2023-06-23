@@ -16,7 +16,7 @@
 }
 
 .film-form {
-    width: 80%;
+    width: 90%;
     margin: 0 auto;
     margin-top: 40px;
     margin-bottom: 10px;
@@ -24,8 +24,26 @@
     border-bottom: 2px solid rgb(148, 3, 3);
 }
 
-.film-form input {
+.film-form input:first-child {
     width: 40%;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 3px 12px 3px 12px;
+    margin-right: 10px;
+    border: 2px solid grey;
+}
+
+.film-form input[type="number"] {
+    width: 20%;
+    border-radius: 50px;
+    font-size: 18px;
+    padding: 3px 12px 3px 12px;
+    margin-right: 10px;
+    border: 2px solid grey;
+}
+
+.film-form select {
+    width: 20%;
     border-radius: 50px;
     font-size: 18px;
     padding: 3px 12px 3px 12px;
