@@ -31,7 +31,7 @@ const FilmItems = ({ data }) => {
 
             <div className='row'>
                 {data && data.length > 0 ? (
-                    sortFilm(data, sortType).map((film) => (
+                    sortFilm().map((film) => (
                         <FilmInfo film={film} key={film.imdbID} />
                     ))
                 ) : (
