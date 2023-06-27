@@ -3,6 +3,7 @@ import { NavLink, Outlet, useSearchParams } from 'react-router-dom';
 import './users.css';
 import axios from 'axios';
 import UsersContext from '../../contexts/UsersContext';
+import FavoriteFilms from '../Films/FavoriteFilms';
 
 const Users = () => {
     const users = useContext(UsersContext);
@@ -23,15 +24,19 @@ const Users = () => {
     }   
 
     return (
-        <div className='users'>
-            <div className='users-list'>
+        <>
+            <div className='users'>
+                <div className='users-list'>
 
-                <input type="text" value={textSearch} onChange={searchHendler}/>
+                    <input type="text" value={textSearch} onChange={searchHendler}/>
 
-                {users.filter(filterUsers).map(user => <NavLink to={`/users/${user.id}`} key={user.id}>{ user.name }</NavLink>)}
+                    {users.filter(filterUsers).map(user => <NavLink to={`/users/${user.id}`} key={user.id}>{ user.name }</NavLink>)}
+                </div>
+                <Outlet />
             </div>
-            <Outlet />
-        </div>
+
+            <FavoriteFilms />
+        </>
     );
 }
 

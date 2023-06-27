@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import FavoriteFilms from '../Films/FavoriteFilms';
 
 const Counter = () => {
 
@@ -16,7 +17,9 @@ const Counter = () => {
         <div>
             <button onClick={()=>{ decrement() }}>-</button>
             <span>{count}</span>
-            <button onClick={()=>{ increment() }}>+</button>
+            <button onClick={() => { increment() }}>+</button>
+            
+            <FavoriteFilms />
         </div>
     );
 }

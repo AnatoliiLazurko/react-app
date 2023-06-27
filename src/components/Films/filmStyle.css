@@ -3,7 +3,7 @@
     max-width: 100%;
     margin: 0 auto;
     margin-top: 60px;
-    margin-bottom: 60px;
+    margin-bottom: 20px;
     padding: 20px 30px 40px 30px;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     border-radius: 15px;
@@ -150,6 +150,10 @@
     text-align: left;
 }
 
+.likeFilm {
+    color: red;
+}
+
 
 /* ---Add Film--- */
 
@@ -210,4 +214,40 @@
 .addFilm-block button:hover {
     background-color: #24262b;
     color: white;
+}
+
+/* Favorite Films */
+
+.fav-films {
+    margin: 0 auto;
+    max-width: 900px;
+    width: 100%;
+    background-color: white;
+    margin-bottom: 100px;
+    margin-top: 40px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px 8px 0 0;
+}
+
+.fav-header {
+    width: 100%;
+    color: white;
+    background-color: #e00027;
+    border-radius: 8px 8px 0 0;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 22px;
+}
+
+.list-fav {
+    padding: 20px;
+}
+
+.list-fav table {
+    width: 90%;
+    margin: 0 auto;
+    font-size: 17px;
 }

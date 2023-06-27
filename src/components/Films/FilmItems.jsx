@@ -6,11 +6,11 @@ const FilmItems = ({ data }) => {
     const [sortType, setSortType] = useState('all');
 
     const sortFilm = () => {
-    if (sortType === 'growth') {
-        return [...data].sort((a, b) => a.Year.localeCompare(b.Year));
+        if (sortType === 'growth') {
+            return [...data].sort((a, b) => a.Year.localeCompare(b.Year));
         }
         if (sortType === 'decline') {
-        return [...data].sort((a, b) => b.Year.localeCompare(a.Year));
+            return [...data].sort((a, b) => b.Year.localeCompare(a.Year));
         }
         return data;
     }
@@ -22,7 +22,7 @@ const FilmItems = ({ data }) => {
                 <form>
                     <label>Sorting by year: </label>
                     <select value={sortType} onChange={(e) => setSortType(e.target.value)} >
-                        <option value="all" selected>show all</option>
+                        <option value="all">show all</option>
                         <option value="decline">decline</option>
                         <option value="growth">growth</option>
                     </select>

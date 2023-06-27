@@ -4,10 +4,12 @@ import './header.css';
 import ThemeContext from '../../contexts/ThemeContext';
 import DarkModeIcon from '@mui/icons-material/DarkMode';
 import LightModeIcon from '@mui/icons-material/LightMode';
+import FavoriteFilmsContext from '../../contexts/FavoriteFilmsContext';
 
 const Header = () => {
 
     const { theme, toggleTheme } = useContext(ThemeContext);
+    const { favoriteFilms } = useContext(FavoriteFilmsContext);
 
     return (
         <header className={ theme }>
@@ -16,7 +18,10 @@ const Header = () => {
             <NavLink to="/counter">Counter</NavLink>
             <NavLink to="/users">Users</NavLink>
 
-            {theme === 'light' ? <DarkModeIcon onClick={toggleTheme} /> : <LightModeIcon onClick={toggleTheme} />}
+            {theme === 'light' ? <DarkModeIcon className='themeToggle' onClick={toggleTheme} /> : <LightModeIcon className='themeToggle' onClick={toggleTheme} />}
+
+            <i className='fa fa-heart likedFilms'><span>{ favoriteFilms.length }</span></i>
+
         </header>
     );
 }

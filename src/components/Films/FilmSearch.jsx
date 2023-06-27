@@ -22,7 +22,7 @@ const FilmSearch = ({ setFilms }) => {
 
     useEffect(() => {
         getFilms();
-    }, [search])
+    }, [])
 
     const submitHandler = (e) => {
         e.preventDefault();

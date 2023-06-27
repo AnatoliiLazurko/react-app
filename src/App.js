@@ -10,6 +10,7 @@ import UsersContext from "./contexts/UsersContext";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import ThemeProvider from "./providers/ThemeProvider";
+import FavoriteFilmsProvider from "./providers/FavoriteFilmsProvider";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -27,20 +28,23 @@ function App() {
     <>
       <UsersContext.Provider value={users}>
         <ThemeProvider>
-          <Header />
+          <FavoriteFilmsProvider>
 
-          <Routes>
-            <Route path="/" element={<ToDo />} />
-            <Route path="/films" element={<Films />} />
-            <Route path="/counter" element={<Counter />} />
+            <Header />
 
-            <Route path="/users" element={<Users />}>
-              <Route path="/users/:id" element={<UserInfo />} />
-            </Route>
+            <Routes>
+              <Route path="/" element={<ToDo />} />
+              <Route path="/films" element={<Films />} />
+              <Route path="/counter" element={<Counter />} />
 
-            <Route path="*" element={<h1>Page Not Found</h1>} />
-          </Routes>
-          
+              <Route path="/users" element={<Users />}>
+                <Route path="/users/:id" element={<UserInfo />} />
+              </Route>
+
+              <Route path="*" element={<h1>Page Not Found</h1>} />
+            </Routes>
+
+          </FavoriteFilmsProvider>
         </ThemeProvider>
       </UsersContext.Provider>
     </>

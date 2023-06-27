@@ -6,6 +6,7 @@ import { toDoItems } from './toDoItems';
 import { v4 as uuidv4 } from 'uuid';
 import './style.css';
 import tasksReducer from './ToDoReducer';
+import FavoriteFilms from '../Films/FavoriteFilms';
 
 
 const ToDo = () => {
@@ -51,26 +52,30 @@ const ToDo = () => {
     const taskHeading = `${taskList.filter(filter_map[filter]).length} ${tasksWord}`
 
     return (
-        <div className='container'>
-            <h2 className="title">TodoMatic</h2>
-            
-            <AddToDo addTask={addTask} />
-            <FilterToDo filter_map={filter_map} filter={filter} setFilter={setFilter} />
+        <>
+            <div className='container'>
+                <h2 className="title">TodoMatic</h2>
+                
+                <AddToDo addTask={addTask} />
+                <FilterToDo filter_map={filter_map} filter={filter} setFilter={setFilter} />
 
-            <div>
-                <h3>{taskHeading}</h3>
-                <ul>
-                    {taskList.filter(filter_map[filter]).map((task) => (
-                        <ToDoItem
-                            task={task}
-                            toggleTaskCompleted={toggleTaskCompleted}
-                            deleteTask={deleteTask}
-                            editTask={editTask}
-                            key={task.id} />
-                    ))}
-                </ul>
+                <div>
+                    <h3>{taskHeading}</h3>
+                    <ul>
+                        {taskList.filter(filter_map[filter]).map((task) => (
+                            <ToDoItem
+                                task={task}
+                                toggleTaskCompleted={toggleTaskCompleted}
+                                deleteTask={deleteTask}
+                                editTask={editTask}
+                                key={task.id} />
+                        ))}
+                    </ul>
+                </div>
             </div>
-        </div>
+
+            <FavoriteFilms />
+        </>
     );
 }
 

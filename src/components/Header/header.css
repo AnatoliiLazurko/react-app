@@ -19,17 +19,12 @@ header a:hover {
     opacity: 1;
 }
 
-header a.active {
-    color: orangered;
-    opacity: 1;
-}
-
 header.dark {
     background-color: #333;
     color: white;
 }
 
-header.dark a{
+header.dark a {
     color: white;
 }
 
@@ -39,4 +34,25 @@ header.light {
 
 header.light a {
     color: black;
+}
+
+header a.active {
+    color: orangered;
+    opacity: 1;
+}
+
+.themeToggle {
+    float: right;
+}
+
+.likedFilms {
+    float: right;
+    color: red;
+    font-size: 1.2rem;
+    margin-right: 20px;
+    margin-top: 3px;
+}
+
+.likedFilms span {
+    margin-left: 5px;
 }
