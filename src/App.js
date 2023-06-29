@@ -11,6 +11,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ThemeProvider from "./providers/ThemeProvider";
 import FavoriteFilmsProvider from "./providers/FavoriteFilmsProvider";
+import Counters from "./components/Counters/Counters";
 
 function App() {
   const [users, setUsers] = useState([]);
@@ -40,6 +41,8 @@ function App() {
               <Route path="/users" element={<Users />}>
                 <Route path="/users/:id" element={<UserInfo />} />
               </Route>
+
+              <Route path="/counters" element={<Counters />} />
 
               <Route path="*" element={<h1>Page Not Found</h1>} />
             </Routes>

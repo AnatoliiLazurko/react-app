@@ -1,13 +1,16 @@
 import { Button, Form, Input, Modal } from 'antd';
+import { useForm } from 'antd/es/form/Form';
 import React, { useEffect, useRef, useState } from 'react';
 
 const EditToDo = ({ task, editTask }) => {
 
     const [isModalOpen, setIsModalOpen] = useState(false);
-    const form = useRef(null);
+    const [form] =  Form.useForm();
     
     useEffect(() => {
-        
+        form.initialValues = {
+            name: task.name,
+        };
     }, [])
 
     const initialValues = {
@@ -40,7 +43,7 @@ const EditToDo = ({ task, editTask }) => {
                 onCancel={handleCancel}
                 footer={null}
             >
-                <Form onFinish={submitHandler} ref={form} initialValues={initialValues}>
+                <Form onFinish={submitHandler} form={form} initialValues={initialValues}>
                     <Form.Item name="name" rules={[{required: true}]}>
                         <Input />
                     </Form.Item>

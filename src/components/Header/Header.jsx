@@ -17,6 +17,7 @@ const Header = () => {
             <NavLink to="/films">Films</NavLink>
             <NavLink to="/counter">Counter</NavLink>
             <NavLink to="/users">Users</NavLink>
+            <NavLink to="/counters">Counters</NavLink>
 
             {theme === 'light' ? <DarkModeIcon className='themeToggle' onClick={toggleTheme} /> : <LightModeIcon className='themeToggle' onClick={toggleTheme} />}
 
