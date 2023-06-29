@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
+import EditToDo from './EditToDo';
 
 const ToDoItem = ({task, toggleTaskCompleted, deleteTask, editTask}) => {
     
@@ -27,6 +28,7 @@ const ToDoItem = ({task, toggleTaskCompleted, deleteTask, editTask}) => {
             <div>
                 <button onClick={() => setEditing(true)}>Edit</button>
                 <button onClick={() => { deleteTask(task.id) }}>Delete</button>
+                <EditToDo task={task} editTask={editTask} />    
             </div>
         </div>
     );
@@ -37,7 +39,7 @@ const ToDoItem = ({task, toggleTaskCompleted, deleteTask, editTask}) => {
             <input type="text" value={newName} onChange={(e) => setNewName(e.target.value)}/>
             <div>
                 <button onClick={handlerSubmit}>Save</button>
-                <button onClick={() => setEditing(false)}>Cancel</button>
+                <button onClick={() => setEditing(false)}>Cancel</button> 
             </div>
         </div>
     );

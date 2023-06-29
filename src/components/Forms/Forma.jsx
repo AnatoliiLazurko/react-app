@@ -24,8 +24,6 @@ const PRODUCT_SCHEMA = Yup.object().shape({
 
 const Forma = () => {
 
-
-
     const submitHandler = (values, formikBag) => {
         formikBag.resetForm();
     }
